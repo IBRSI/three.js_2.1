@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>three.js webgl - layers</title>
@@ -67,7 +67,7 @@
         camera.add(light);
 
         const colors = [0xff0000, 0x00ff00, 0x0000ff];
-        const geometry = new THREE.SphereGeometry(0.5, 32, 32); // Замените BoxGeometry на SphereGeometry
+        const geometry = new THREE.BoxGeometry(); // Используется BoxGeometry
 
         for (let i = 0; i < 300; i++) {
 
@@ -137,3 +137,12 @@
     }
 
     function animate() {
+        render();
+        stats.update();
+    }
+
+    function render() {
+        theta += 0.1;
+
+        camera.position.x = radius * Math.sin(THREE.MathUtils.degToRad(theta));
+        camera.position.y = radius * Math.sin(TH
